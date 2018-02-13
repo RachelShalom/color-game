@@ -18,3 +18,17 @@ body {
 h1 {
     color: white;
 }
+
+#stripe {
+    background-color: white;
+    text-align: center;
+    color: black;
+}
+
+.selected {
+    background-color: rgb(40, 21, 211);
+}
+
+.hidden {
+    display: none;
+}
