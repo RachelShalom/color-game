@@ -1,7 +1,7 @@
 var squares = document.querySelectorAll(".square");
 //this is the color that should be guessed
 var guessingColor = document.querySelector("#pickedcolor");
-var pickedColor = Math.floor(Math.random() * squares.length);
+var pickedColor = pickColor(squares.length);
 var message = document.querySelector("#message");
 var head = document.querySelector("h1");
 var newcolorsButtons = document.getElementById("new-colors");
@@ -16,13 +16,13 @@ newcolorsButtons.addEventListener("click", function() {
 btnHard.addEventListener("click", function() {
     this.classList.add("selected");
     btnEasy.classList.remove("selected");
-    toggleSquares();
+    removeSquares();
     resetColors(squares.length);
 });
 btnEasy.addEventListener("click", function() {
     this.classList.add("selected");
     btnHard.classList.remove("selected");
-    toggleSquares();
+    addSquares();
     resetColors(3);
 
 });
@@ -46,6 +46,7 @@ function initiateColor(numberofsquares) {
     for (var i = 0; i < numberofsquares; i++) {
         squares[i].style.backgroundColor = randomColor();
     }
+    pickedColor = pickColor(numberofsquares);
     guessingColor.textContent = squares[pickedColor].style.backgroundColor;
 }
 //this function add event listener to every square
@@ -75,8 +76,18 @@ function resetColors(numberofsquares) {
     message.textContent = "";
 }
 
-function toggleSquares() {
+function addSquares() {
     for (var i = 3; i < squares.length; i++) {
-        squares[i].classList.toggle("hidden");
+        squares[i].classList.add("hidden");
     }
+}
+
+function removeSquares() {
+    for (var i = 3; i < squares.length; i++) {
+        squares[i].classList.remove("hidden");
+    }
+}
+// this fucnction is choosing the color to be guest from the squares
+function pickColor(num) {
+    return Math.floor(Math.random() * num);
 }
