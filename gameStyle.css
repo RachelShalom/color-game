@@ -3,7 +3,9 @@ body {
 }
 
 .square {
+    transition: background-color 0.5s ease;
     background-color: aqua;
+    border-radius: 25px;
     margin: 1.66%;
     padding-bottom: 30%;
     width: 30%;
@@ -17,6 +19,7 @@ body {
 
 h1 {
     color: white;
+    text-align: center;
 }
 
 #stripe {

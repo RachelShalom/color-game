@@ -11,18 +11,22 @@ initiateColor(squares.length);
 addEventListenersToSquares();
 
 newcolorsButtons.addEventListener("click", function() {
-    resetColors(squares.length);
-})
+    if (btnHard.classList.contains("selected")) {
+        resetColors(squares.length);
+    } else {
+        resetColors(3);
+    }
+});
 btnHard.addEventListener("click", function() {
     this.classList.add("selected");
     btnEasy.classList.remove("selected");
-    removeSquares();
+    addSquares();
     resetColors(squares.length);
 });
 btnEasy.addEventListener("click", function() {
     this.classList.add("selected");
     btnHard.classList.remove("selected");
-    addSquares();
+    removeSquare();
     resetColors(3);
 
 });
@@ -76,13 +80,13 @@ function resetColors(numberofsquares) {
     message.textContent = "";
 }
 
-function addSquares() {
+function removeSquare() {
     for (var i = 3; i < squares.length; i++) {
         squares[i].classList.add("hidden");
     }
 }
 
-function removeSquares() {
+function addSquares() {
     for (var i = 3; i < squares.length; i++) {
         squares[i].classList.remove("hidden");
     }
