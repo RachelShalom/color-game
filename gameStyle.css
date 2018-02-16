@@ -1,11 +1,14 @@
 body {
     background-color: #282828;
+    font-family: 'Rubik', sans-serif;
 }
 
 .square {
     transition: background-color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
     background-color: aqua;
-    border-radius: 25px;
+    border-radius: 15%;
     margin: 1.66%;
     padding-bottom: 30%;
     width: 30%;
@@ -20,18 +23,55 @@ body {
 h1 {
     color: white;
     text-align: center;
+    background-color: #145b96;
+    font-weight: normal;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #stripe {
     background-color: white;
     text-align: center;
-    color: black;
+    color: #145b96;
+    margin-bottom: 5px;
 }
 
 .selected {
-    background-color: rgb(40, 21, 211);
+    background-color: #145b96;
+    color: white;
+    font-family: 'Rubik', sans-serif;
 }
 
 .hidden {
     display: none;
+}
+
+#pickedcolor {
+    font-size: 200%;
+}
+
+button {
+    border: none;
+    color: #145b96;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 100%;
+    padding: 5px 5px;
+}
+
+#message {
+    display: inline-block;
+    width: 18%;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #145b96;
+    color: white;
 }
